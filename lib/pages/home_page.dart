@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trilhapp/pages/card_page.dart';
+import 'package:trilhapp/pages/consulta_cep_page.dart';
 import 'package:trilhapp/shared/widget/custom_drawer.dart';
 
 class MainPage extends StatefulWidget {
@@ -32,9 +33,24 @@ class _MainPageState extends State<MainPage> {
                 },
                 children: const [
                   CardPage(),
+                  ConsultaCepPage(),
                 ],
               ),
             ),
+            BottomNavigationBar(
+                type: BottomNavigationBarType.fixed,
+                onTap: (value) => setState(() {
+                      pageController.animateToPage(value,
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeIn);
+                    }),
+                currentIndex: posicaoPagina,
+                items: const [
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.home), label: "Home"),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.lock_clock), label: "Via Cep"),
+                ])
           ],
         ),
       ),
