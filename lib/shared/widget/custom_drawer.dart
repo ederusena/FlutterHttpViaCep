@@ -6,6 +6,7 @@ import 'package:trilhapp/pages/heroes_marvel/marvel_characters_page.dart';
 import 'package:trilhapp/pages/numeros_aleatorios/numeros_aleatorios_hive_page.dart';
 import 'package:trilhapp/pages/post_pages.dart';
 import 'package:trilhapp/pages/tarefa/tarefa_sqlite_page.dart';
+import 'package:trilhapp/pages/tarefasBack4app/tarefas_back4app_page.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -13,8 +14,7 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
         children: [
           InkWell(
             onTap: () {
@@ -111,6 +111,27 @@ class CustomDrawer extends StatelessWidget {
                         })
                   },
                 ),
+                const SizedBox(height: 10),
+                const Divider(),
+                InkWell(
+                    child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        width: double.infinity,
+                        child: const Row(
+                          children: [
+                            Icon(Icons.task),
+                            SizedBox(width: 10),
+                            Text("Tarefas Back4App"),
+                          ],
+                        )),
+                    onTap: () => {
+                          Navigator.pop(context, 'OK'),
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext bc) =>
+                                      const TarefasBack4appPage()))
+                        }),
                 const SizedBox(height: 10),
                 const Divider(),
                 InkWell(
