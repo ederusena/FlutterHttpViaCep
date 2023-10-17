@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trilhapp/pages/configuracoes/configuracao_hive_page.dart';
 import 'package:trilhapp/pages/dados_cadastrais/dados_cadastrais_hive_page.dart';
 import 'package:trilhapp/pages/login_page.dart';
+import 'package:trilhapp/pages/heroes_marvel/marvel_characters_page.dart';
 import 'package:trilhapp/pages/numeros_aleatorios/numeros_aleatorios_hive_page.dart';
 import 'package:trilhapp/pages/post_pages.dart';
 import 'package:trilhapp/pages/tarefa/tarefa_sqlite_page.dart';
@@ -110,6 +111,27 @@ class CustomDrawer extends StatelessWidget {
                         })
                   },
                 ),
+                const SizedBox(height: 10),
+                const Divider(),
+                InkWell(
+                    child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        width: double.infinity,
+                        child: const Row(
+                          children: [
+                            Icon(Icons.shield),
+                            SizedBox(width: 10),
+                            Text("Marvel API"),
+                          ],
+                        )),
+                    onTap: () => {
+                          Navigator.pop(context, 'OK'),
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext bc) =>
+                                      const MarvelCharactersPage()))
+                        }),
                 const SizedBox(height: 10),
                 const Divider(),
                 InkWell(

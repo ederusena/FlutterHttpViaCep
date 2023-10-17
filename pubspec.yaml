@@ -19,7 +19,9 @@ dependencies:
   sqflite: ^2.3.0
   http: ^1.1.0
   dio: ^5.3.3
-
+  crypto: ^3.0.3
+  flutter_dotenv: ^5.1.0
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -39,5 +41,5 @@ flutter:
     - lib/images/paisagem1.jpg
     - lib/images/paisagem2.jpg
     - lib/images/paisagem3.jpg
-
+    - .env
   # see https://flutter.dev/custom-fonts/#from-packages
