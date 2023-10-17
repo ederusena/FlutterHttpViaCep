@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trilhapp/model/comment_model.dart';
-import 'package:trilhapp/repository/comment_jsonplaceholder_repository.dart';
+import 'package:trilhapp/repository/comments/impl/comment_dio_repository.dart';
+import 'package:trilhapp/repository/comments/interfaces/comment_interface.dart';
 
 class CommentPage extends StatefulWidget {
   final int postId;
@@ -11,20 +12,20 @@ class CommentPage extends StatefulWidget {
 }
 
 class _CommentPageState extends State<CommentPage> {
-  var commentRepository = CommentRepository();
+  late ICommentRepository commentRepository;
   var commentList = <CommentModel>[];
 
   @override
   void initState() {
     super.initState();
+    commentRepository = CommentDioRepository();
     carregarDados();
   }
 
   void carregarDados() async {
-    var lista = await commentRepository.consultarComentario(widget.postId);
-    setState(() {
-      commentList = lista;
-    });
+    commentList = await commentRepository.getComments(widget.postId);
+
+    setState(() {});
   }
 
   @override

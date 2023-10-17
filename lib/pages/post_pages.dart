@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trilhapp/model/post_model.dart';
 import 'package:trilhapp/pages/comment_pages.dart';
-import 'package:trilhapp/repository/post_jsonplaceholder_repository.dart';
+import 'package:trilhapp/repository/posts/impl/post_dio_repository.dart';
 
 class PostPage extends StatefulWidget {
   const PostPage({super.key});
@@ -11,7 +11,7 @@ class PostPage extends StatefulWidget {
 }
 
 class _PostPageState extends State<PostPage> {
-  var postRepository = PostRepository();
+  var postRepository = PostDioRepository();
   var posts = <PostModel>[];
 
   @override
@@ -21,7 +21,7 @@ class _PostPageState extends State<PostPage> {
   }
 
   void carregarDados() async {
-    var lista = await postRepository.consultarPost();
+    var lista = await postRepository.getPosts();
     setState(() {
       posts = lista;
     });

@@ -11,7 +11,7 @@ class ConsultaCepPage extends StatefulWidget {
 
 class _ConsultaCepPageState extends State<ConsultaCepPage> {
   var viaCepModel = ViaCepModel();
-  var viaCepRepository = ViaCepRepository();
+  var viaCepRepository = ViaCepHttpRepository();
 
   var cepController = TextEditingController(text: "");
   bool isLoading = false;
