@@ -25,6 +25,9 @@ dependencies:
   auto_size_text: ^3.0.0
   animated_text_kit: ^4.2.2
   convex_bottom_bar: ^3.2.0
+  brasil_fields: ^1.14.0
+  intl: ^0.18.1
+  easy_localization: ^3.0.3
 
 dev_dependencies:
   flutter_test:
@@ -39,6 +42,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/translations/
     - lib/images/user1.png
     - lib/images/user2.png
     - lib/images/user3.png

@@ -29,3 +29,18 @@ animated_text_kit: ^4.2.2
 ![Alt text](image-6.png)
 convex_bottom_bar: ^3.2.0
 flutter pub add convex_bottom_bar
+
+## Padroes brasileiro 
+![Alt text](image-7.png)
+brasil_fields: ^1.14.0
+flutter pub add brasil_fields
+
+## Internacionalizacao
+![Alt text](image-8.png)
+intl: ^0.18.1
+flutter pub add intl
+
+## Easy Localization
+![Alt text](image-9.png)
+easy_localization: ^3.0.3
+flutter pub add easy_localization

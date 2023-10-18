@@ -1,6 +1,7 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:trilhapp/pages/auto_size_text/auto_text_page.dart';
+import 'package:trilhapp/pages/brasil_fields/brasil_fields_page.dart';
 import 'package:trilhapp/pages/card_page.dart';
 import 'package:trilhapp/pages/consulta_cep_page.dart';
 import 'package:trilhapp/pages/splash_screen/splash_screen_page.dart';
@@ -46,9 +47,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                 Container(
                   color: Colors.yellow,
                 ),
-                Container(
-                  color: Colors.amber,
-                ),
+                const BrasilFieldPage(),
               ],
             ),
             bottomNavigationBar: ConvexAppBar.badge(
@@ -58,7 +57,9 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                 TabItem(icon: Icons.map, title: 'Discovery'),
                 TabItem(icon: Icons.add, title: 'Add'),
                 TabItem(icon: Icons.message, title: 'Message'),
-                TabItem(icon: Icons.people, title: 'Profile'),
+                TabItem(
+                    icon: FaIcon(FontAwesomeIcons.brazilianRealSign),
+                    title: 'Brasil Fields'),
               ],
               onTap: (int i) => tabController.index = i,
               controller: tabController,

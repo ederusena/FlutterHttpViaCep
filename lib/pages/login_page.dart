@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trilhapp/pages/home_page.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -12,6 +13,21 @@ class _LoginPageState extends State<LoginPage> {
   var emailController = TextEditingController(text: "eder.sena@live.com");
   var passwordController = TextEditingController(text: "123456");
   var isObscure = true;
+  var changeLanguage = false;
+
+  @override
+  void initState() {
+    super.initState();
+    handleChangeLanguage();
+  }
+
+  handleChangeLanguage() {
+    if (changeLanguage) {
+      context.setLocale(const Locale('en', 'US'));
+    } else {
+      context.setLocale(const Locale('pt', 'BR'));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,13 +56,13 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
                 const SizedBox(height: 30),
-                const Text("Já tem cadastro?",
-                    style: TextStyle(
+                Text("JA_TEM_CADASTRO".tr(),
+                    style: const TextStyle(
                         color: Colors.white,
                         fontSize: 24,
                         fontWeight: FontWeight.bold)),
-                const Text("Faça seu login e make the change_",
-                    style: TextStyle(color: Colors.white, fontSize: 14)),
+                Text("MAKE_CHANGE".tr(),
+                    style: const TextStyle(color: Colors.white, fontSize: 14)),
                 const SizedBox(height: 40),
                 Container(
                     width: double.infinity,
@@ -144,28 +160,43 @@ class _LoginPageState extends State<LoginPage> {
                             );
                           }
                         },
-                        child: const Text("Entrar",
-                            style: TextStyle(
+                        child: Text("ENTRAR".tr(),
+                            style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400)),
                       ),
                     )),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("TROCAR_IDIOMA".tr(),
+                        style: const TextStyle(color: Colors.white)),
+                    Switch(
+                        value: changeLanguage,
+                        onChanged: (bool value) {
+                          setState(() {
+                            changeLanguage = value;
+                          });
+                          handleChangeLanguage();
+                        }),
+                  ],
+                ),
                 Expanded(child: Container()),
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 30),
                   alignment: Alignment.center,
                   height: 30,
-                  child: const Text("Esqueci minha senha",
-                      style: TextStyle(
+                  child: Text("ESQUECEU_SENHA".tr(),
+                      style: const TextStyle(
                           color: Colors.green, fontWeight: FontWeight.w400)),
                 ),
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 30),
                   alignment: Alignment.center,
                   height: 30,
-                  child: const Text("Criar Conta",
-                      style: TextStyle(color: Colors.green)),
+                  child: Text("CRIAR_CONTA".tr(),
+                      style: const TextStyle(color: Colors.green)),
                 ),
                 const SizedBox(height: 60),
               ],
