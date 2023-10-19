@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:trilhapp/pages/battery_status/battery_page.dart';
@@ -13,6 +15,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -117,6 +120,37 @@ class CustomDrawer extends StatelessWidget {
                         })
                   },
                 ),
+                const SizedBox(height: 10),
+                const Divider(),
+                InkWell(
+                    child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        width: double.infinity,
+                        child: const Row(
+                          children: [
+                            FaIcon(FontAwesomeIcons.mobileScreenButton),
+                            SizedBox(width: 10),
+                            Text("Informação do Dispositivo"),
+                          ],
+                        )),
+                    onTap: () async {
+                      DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+
+                      if (Platform.isAndroid) {
+                        AndroidDeviceInfo androidInfo =
+                            await deviceInfo.androidInfo;
+                        print(
+                            'Running on ${androidInfo.model}'); // e.g. "Moto G (4)"
+                      } else if (Platform.isIOS) {
+                        IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
+                        print(
+                            'Running on ${iosInfo.utsname.machine}'); // e.g. "iPod7,1"
+                      } else if (Platform.isWindows) {
+                        WebBrowserInfo webBrowserInfo =
+                            await deviceInfo.webBrowserInfo;
+                        print('Running on ${webBrowserInfo.userAgent}');
+                      }
+                    }),
                 const SizedBox(height: 10),
                 const Divider(),
                 InkWell(

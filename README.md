@@ -74,5 +74,8 @@ flutter pub add package_info_plus
 
 
 ## obtendo informações do dispositivo
+![Alt text](image-15.png)
+device_info_plus: ^9.1.0
+flutter pub add device_info_plus
 
 ## obtendo informações do GPS
