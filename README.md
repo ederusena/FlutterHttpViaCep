@@ -78,4 +78,13 @@ flutter pub add package_info_plus
 device_info_plus: ^9.1.0
 flutter pub add device_info_plus
 
+## Obtendo informacoes da conexao do dispositivo
+![Alt text](image-16.png)
+connectivity_plus: ^5.0.1
+flutter pub add connectivity_plus
+
+
 ## obtendo informações do GPS
+![Alt text](image-17.png)
+geolocator: ^10.1.0
+flutter pub add geolocator
