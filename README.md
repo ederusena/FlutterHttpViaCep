@@ -62,6 +62,10 @@ share_plus: ^7.2.1
 flutter pub add share_plus
 
 ## Obtendo caminho das pastas do dispositivo
+![Alt text](image-13.png)
+path_provider: ^2.1.1
+flutter pub add path_provider
+
 
 ## Obtendo informações sobre o aplicativo
 

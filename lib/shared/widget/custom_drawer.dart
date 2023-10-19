@@ -11,6 +11,7 @@ import 'package:trilhapp/pages/tarefa/tarefa_sqlite_page.dart';
 import 'package:trilhapp/pages/tarefasBack4app/tarefas_back4app_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:path_provider/path_provider.dart' as path_provider;
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -115,6 +116,24 @@ class CustomDrawer extends StatelessWidget {
                         })
                   },
                 ),
+                const SizedBox(height: 10),
+                const Divider(),
+                InkWell(
+                    child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        width: double.infinity,
+                        child: const Row(
+                          children: [
+                            FaIcon(FontAwesomeIcons.folderOpen),
+                            SizedBox(width: 10),
+                            Text("Abrir pasta"),
+                          ],
+                        )),
+                    onTap: () async {
+                      var directory = await path_provider
+                          .getApplicationDocumentsDirectory();
+                      print(directory);
+                    }),
                 const SizedBox(height: 10),
                 const Divider(),
                 InkWell(
