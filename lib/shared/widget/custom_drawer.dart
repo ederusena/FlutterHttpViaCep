@@ -9,6 +9,8 @@ import 'package:trilhapp/pages/numeros_aleatorios/numeros_aleatorios_hive_page.d
 import 'package:trilhapp/pages/post_pages.dart';
 import 'package:trilhapp/pages/tarefa/tarefa_sqlite_page.dart';
 import 'package:trilhapp/pages/tarefasBack4app/tarefas_back4app_page.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:share_plus/share_plus.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -113,6 +115,39 @@ class CustomDrawer extends StatelessWidget {
                         })
                   },
                 ),
+                const SizedBox(height: 10),
+                const Divider(),
+                InkWell(
+                    child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        width: double.infinity,
+                        child: const Row(
+                          children: [
+                            FaIcon(FontAwesomeIcons.github),
+                            SizedBox(width: 10),
+                            Text("Github"),
+                          ],
+                        )),
+                    onTap: () async {
+                      await launchUrl(
+                          Uri.parse('https://github.com/ederusena'));
+                    }),
+                const SizedBox(height: 10),
+                const Divider(),
+                InkWell(
+                    child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        width: double.infinity,
+                        child: const Row(
+                          children: [
+                            FaIcon(FontAwesomeIcons.share),
+                            SizedBox(width: 10),
+                            Text("Compartilhar"),
+                          ],
+                        )),
+                    onTap: () {
+                      Share.share('check out my website https://example.com');
+                    }),
                 const SizedBox(height: 10),
                 const Divider(),
                 InkWell(

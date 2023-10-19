@@ -52,8 +52,14 @@ flutter pub add battery_plus
 
 
 ## Abrir URL externa
+![Alt text](image-11.png)
+url_launcher: ^6.1.14
+
 
 ## Compartilhamento
+![Alt text](image-12.png)
+share_plus: ^7.2.1
+flutter pub add share_plus
 
 ## Obtendo caminho das pastas do dispositivo
 

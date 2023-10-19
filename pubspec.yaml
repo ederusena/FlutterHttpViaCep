@@ -29,6 +29,8 @@ dependencies:
   intl: ^0.18.1
   easy_localization: ^3.0.3
   battery_plus: ^2.2.1
+  url_launcher: ^6.1.14
+  share_plus: ^7.2.1
 
 dev_dependencies:
   flutter_test:
