@@ -68,6 +68,10 @@ flutter pub add path_provider
 
 
 ## Obtendo informações sobre o aplicativo
+![Alt text](image-14.png)
+package_info_plus: ^4.2.0
+flutter pub add package_info_plus
+
 
 ## obtendo informações do dispositivo
 

@@ -12,6 +12,7 @@ import 'package:trilhapp/pages/tarefasBack4app/tarefas_back4app_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
+import 'package:package_info_plus/package_info_plus.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -116,6 +117,33 @@ class CustomDrawer extends StatelessWidget {
                         })
                   },
                 ),
+                const SizedBox(height: 10),
+                const Divider(),
+                InkWell(
+                    child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        width: double.infinity,
+                        child: const Row(
+                          children: [
+                            FaIcon(FontAwesomeIcons.info),
+                            SizedBox(width: 10),
+                            Text("Informação do app"),
+                          ],
+                        )),
+                    onTap: () async {
+                      PackageInfo packageInfo =
+                          await PackageInfo.fromPlatform();
+
+                      String appName = packageInfo.appName;
+                      String packageName = packageInfo.packageName;
+                      String version = packageInfo.version;
+                      String buildNumber = packageInfo.buildNumber;
+
+                      print(appName);
+                      print(packageName);
+                      print(version);
+                      print(buildNumber);
+                    }),
                 const SizedBox(height: 10),
                 const Divider(),
                 InkWell(
