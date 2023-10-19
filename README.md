@@ -44,3 +44,21 @@ flutter pub add intl
 ![Alt text](image-9.png)
 easy_localization: ^3.0.3
 flutter pub add easy_localization
+
+## Obter status da bateria
+![Alt text](image-10.png)
+battery_plus: ^4.1.0
+flutter pub add battery_plus
+
+
+## Abrir URL externa
+
+## Compartilhamento
+
+## Obtendo caminho das pastas do dispositivo
+
+## Obtendo informações sobre o aplicativo
+
+## obtendo informações do dispositivo
+
+## obtendo informações do GPS

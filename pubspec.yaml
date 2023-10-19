@@ -28,6 +28,7 @@ dependencies:
   brasil_fields: ^1.14.0
   intl: ^0.18.1
   easy_localization: ^3.0.3
+  battery_plus: ^2.2.1
 
 dev_dependencies:
   flutter_test:

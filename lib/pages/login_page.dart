@@ -16,21 +16,12 @@ class _LoginPageState extends State<LoginPage> {
   var changeLanguage = false;
 
   @override
-  void initState() {
-    super.initState();
-    handleChangeLanguage();
-  }
-
-  handleChangeLanguage() {
+  Widget build(BuildContext context) {
     if (changeLanguage) {
       context.setLocale(const Locale('en', 'US'));
     } else {
       context.setLocale(const Locale('pt', 'BR'));
     }
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color.fromARGB(255, 15, 18, 33),
@@ -178,7 +169,6 @@ class _LoginPageState extends State<LoginPage> {
                           setState(() {
                             changeLanguage = value;
                           });
-                          handleChangeLanguage();
                         }),
                   ],
                 ),

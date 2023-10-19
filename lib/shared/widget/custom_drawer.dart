@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:trilhapp/pages/battery_status/battery_page.dart';
 import 'package:trilhapp/pages/configuracoes/configuracao_hive_page.dart';
 import 'package:trilhapp/pages/dados_cadastrais/dados_cadastrais_hive_page.dart';
 import 'package:trilhapp/pages/login_page.dart';
@@ -111,6 +113,27 @@ class CustomDrawer extends StatelessWidget {
                         })
                   },
                 ),
+                const SizedBox(height: 10),
+                const Divider(),
+                InkWell(
+                    child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        width: double.infinity,
+                        child: const Row(
+                          children: [
+                            FaIcon(FontAwesomeIcons.batteryFull),
+                            SizedBox(width: 10),
+                            Text("Medidor Bateria"),
+                          ],
+                        )),
+                    onTap: () => {
+                          Navigator.pop(context, 'OK'),
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext bc) =>
+                                      const BatteryStatusPage()))
+                        }),
                 const SizedBox(height: 10),
                 const Divider(),
                 InkWell(
