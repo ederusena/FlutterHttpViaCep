@@ -88,3 +88,8 @@ flutter pub add connectivity_plus
 ![Alt text](image-17.png)
 geolocator: ^10.1.0
 flutter pub add geolocator
+
+## qr_code_scanner
+![Alt text](image-18.png)
+qr_code_scanner: ^1.0.1
+flutter pub add qr_code_scanner

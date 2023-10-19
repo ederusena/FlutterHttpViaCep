@@ -1,4 +1,5 @@
 {
     "dart.flutterSdkPath": "C:\\tools\flutter",
-    "dotnet.defaultSolution": "disable"
+    "dotnet.defaultSolution": "disable",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

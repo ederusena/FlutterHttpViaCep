@@ -10,6 +10,7 @@ import 'package:trilhapp/pages/login_page.dart';
 import 'package:trilhapp/pages/heroes_marvel/marvel_characters_page.dart';
 import 'package:trilhapp/pages/numeros_aleatorios/numeros_aleatorios_hive_page.dart';
 import 'package:trilhapp/pages/post_pages.dart';
+import 'package:trilhapp/pages/qr_code/qr_code_page.dart';
 import 'package:trilhapp/pages/tarefa/tarefa_sqlite_page.dart';
 import 'package:trilhapp/pages/tarefasBack4app/tarefas_back4app_page.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -121,6 +122,27 @@ class CustomDrawer extends StatelessWidget {
                         })
                   },
                 ),
+                const SizedBox(height: 10),
+                const Divider(),
+                InkWell(
+                    child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        width: double.infinity,
+                        child: const Row(
+                          children: [
+                            FaIcon(FontAwesomeIcons.qrcode),
+                            SizedBox(width: 10),
+                            Text("QR Code Reader"),
+                          ],
+                        )),
+                    onTap: () => {
+                          Navigator.pop(context, 'OK'),
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext bc) =>
+                                      const QrCodePage()))
+                        }),
                 const SizedBox(height: 10),
                 const Divider(),
                 InkWell(
